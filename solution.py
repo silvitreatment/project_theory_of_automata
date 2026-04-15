@@ -160,10 +160,8 @@ def find_chains(sequence: str) -> list[tuple[int, str]]:
     """
     # Список найденных цепочек: (1-based позиция, цепочка)
     results: list[tuple[int, str]] = []
-
     # Длина входной последовательности
     n: int = len(sequence)
-
     # Текущая позиция начала поиска (0-based)
     i: int = 0
 
@@ -195,7 +193,7 @@ def find_chains(sequence: str) -> list[tuple[int, str]]:
             # Добавляем в результат с 1-based позицией
             results.append((i + 1, chain))
 
-            # ВНИМАНИЕ: закрывающий '+' считается началом следующей возможной
+            # закрывающий '+' считается началом следующей возможной
             # цепочки, поэтому следующий поиск начинается с last_accept_end - 1
             i = last_accept_end - 1
         else:
